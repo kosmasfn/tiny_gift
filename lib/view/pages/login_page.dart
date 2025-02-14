@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiny_gift/view/bloc/auth_bloc.dart';
+import 'package:tiny_gift/view/pages/home_page.dart';
 import 'package:tiny_gift/view/pages/main_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -48,7 +49,7 @@ class LoginPage extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MyHomePage(title:  usernameController.text),
+                  builder: (context) => MainPage(title:  usernameController.text),
                 ),
               );
             });

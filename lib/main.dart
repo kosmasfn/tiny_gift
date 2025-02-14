@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiny_gift/injection_container.dart';
 import 'package:tiny_gift/view/bloc/auth_bloc.dart';
 import 'package:tiny_gift/view/pages/login_page.dart';
+import 'package:tiny_gift/view/pages/main_page.dart';
 
 void main() {
   init();
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
 
       home: BlocProvider(
         create: (context) => sl<AuthBloc>(),  // Injecting the AuthBloc into the widget tree
-        // child: MyHomePage(title: 'Tiny Gift'),
-        child: LoginPage(),
+        child: MainPage(title: 'Tiny Gift'),
+        // child: LoginPage(),
       ),
     );
   }
