@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tiny_gift/injection_container.dart';
 import 'package:tiny_gift/view/bloc/auth_bloc.dart';
 import 'package:tiny_gift/view/pages/login_page.dart';
@@ -7,7 +8,8 @@ import 'package:tiny_gift/view/pages/main_page.dart';
 
 void main() {
   init();
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
