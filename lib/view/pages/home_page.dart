@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tiny_gift/domain/usecases/news_usecase.dart';
 import 'package:tiny_gift/view/providers/news_provider.dart';
 
 class HomePage extends ConsumerWidget {
