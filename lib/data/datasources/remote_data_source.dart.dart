@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import '../models/article_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -18,7 +20,9 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   
   @override
   Future<NewsResponse> fetchNews() async {
-    final url = 'https://newsapi.org/v2/everything?q=tesla&from=2025-01-14&sortBy=publishedAt&apiKey=7ae3938bb8ad403da302f65af4ec5256';
+    final apiKey = dotenv.env['API_KEY'] ?? '';
+    print(apiKey);
+    final url = 'https://newsapi.org/v2/everything?q=tesla&from=2025-01-14&sortBy=publishedAt&apiKey=$apiKey';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {

@@ -5,9 +5,11 @@ import 'package:tiny_gift/injection_container.dart';
 import 'package:tiny_gift/view/bloc/auth_bloc.dart';
 import 'package:tiny_gift/view/pages/login_page.dart';
 import 'package:tiny_gift/view/pages/main_page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
   init();
+  await dotenv.load();
   // runApp(const MyApp());
   runApp(ProviderScope(child: MyApp()));
 }
